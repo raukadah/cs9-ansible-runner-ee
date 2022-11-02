@@ -1,0 +1,54 @@
+diff --git a/Dockerfile b/Dockerfile
+index 2df0f03..24b93a7 100644
+--- a/Dockerfile
++++ b/Dockerfile
+@@ -1,5 +1,5 @@
+-ARG PYTHON_BASE_IMAGE=quay.io/ansible/python-base:latest
+-ARG PYTHON_BUILDER_IMAGE=quay.io/ansible/python-builder:latest
++ARG PYTHON_BASE_IMAGE=quay.io/tripleoansible/python-base:stream9
++ARG PYTHON_BUILDER_IMAGE=quay.io/tripleoansible/python-builder:stream9
+ ARG ANSIBLE_BRANCH=""
+ ARG ZUUL_SIBLINGS=""
+ 
+diff --git a/tools/bindep.txt b/tools/bindep.txt
+index 57d6a02..0a79584 100644
+--- a/tools/bindep.txt
++++ b/tools/bindep.txt
+@@ -7,23 +7,23 @@ rsync
+ sshpass [epel]
+ 
+ # ansible
+-python38-cffi [platform:centos-8]
+-python38-cryptography [platform:centos-8]
+-python38-jinja2 [platform:centos-8]
+-python38-pycparser [platform:centos-8]
+-python38-six [platform:centos-8]
+-python38-yaml [platform:centos-8]
++python3-cffi [platform:centos-9]
++python3-cryptography [platform:centos-9]
++python3-jinja2 [platform:centos-9]
++python3-pycparser [platform:centos-9]
++python3-six [platform:centos-9]
++python3-yaml [platform:centos-9]
+ 
+ # ncclient
+-python38-lxml [platform:centos-8 platform:rhel-8]
++python3-lxml [platform:centos-9 platform:rhel-9]
+ 
+ # paramiko
+-findutils [compile platform:centos-8 platform:rhel-8]
+-gcc [compile platform:centos-8 platform:rhel-8]
+-make [compile platform:centos-8 platform:rhel-8]
+-python38-devel [compile platform:centos-8 platform:rhel-8]
++findutils [compile platform:centos-9 platform:rhel-9]
++gcc [compile platform:centos-9 platform:rhel-9]
++make [compile platform:centos-9 platform:rhel-9]
++python3-devel [compile platform:centos-9 platform:rhel-9]
+ 
+ # pypsrp
+-krb5-devel [compile platform:centos-8 platform:rhel-8]
+-krb5-workstation [platform:centos-8 platform:rhel-8]
+-python38-requests [platform:centos-8 platform:rhel-8]
++krb5-devel [compile platform:centos-9 platform:rhel-9]
++krb5-workstation [platform:centos-9 platform:rhel-9]
++python3-requests [platform:centos-9 platform:rhel-9]
